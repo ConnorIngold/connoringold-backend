@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const morgan = require('morgan');
 const nodemailer = require('nodemailer');
-const port = 3000
+const port = "connoringoldcontactform.herokuapp.com"
 const cors = require("cors")
 
 // Middleware
