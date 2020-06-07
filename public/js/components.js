@@ -38,7 +38,9 @@ new Vue({ el: "#sidebar" })
 Vue.component("contact-from", {
   data() {
     return {
-      a: 1,
+      email: "",
+      name: "",
+      message: "",
     }
   },
   methods: {
@@ -75,15 +77,15 @@ Vue.component("contact-from", {
             <form action="submit" @submit.prevent="onSubmit" >
               <div class="wrapper">
                 <label for="name">Your Name:</label>
-                <input type="text" name="name" required id="">
+                <input type="text" name="name" v-model="name" required id="">
               </div>
               <div class="wrapper">
                 <label for="email">Email:</label>
-                <input type="email" name="email" required id="">
+                <input type="email" name="email" v-model="email" required id="">
               </div>
               <div class="wrapper">
                 <label for="msg">Your Message:</label>
-                <input type="textarea" name="msg" required id="">
+                <input type="textarea" name="msg" v-model="message" required id="">
               </div>
               <input 
               type="submit" 
