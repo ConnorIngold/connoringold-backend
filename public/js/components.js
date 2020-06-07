@@ -46,9 +46,6 @@ Vue.component("contact-from", {
   },
   methods: {
     onSubmit: function () {
-      alert(
-        "Not yet finished please go to the bottom of the home page to find wya to contact me"
-      )
       axios
         .post("https://connoringoldcontactform.herokuapp.com/contact", {
           email: this.email,
@@ -62,6 +59,11 @@ Vue.component("contact-from", {
           }
           console.log(response, response.status)
          
+        })
+        .then(() => {
+          if (response.status === 200) {
+            this.success = true
+          }
         })
         .catch(function (error) {
           console.log(error)
