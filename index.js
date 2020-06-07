@@ -14,13 +14,13 @@ const whitelist = ['https://connoringold.com/', 'https://connoringold.com/contac
 const cors = require("cors")
 
 // Middleware
-app.enable('trust proxy');
-app.use(function (req, res, next) {
-  if (req.secure) {
-    return next();
-  }
-  res.redirect("https://" + req.headers.host + req.url);
-});
+// app.enable('trust proxy');
+// app.use(function (req, res, next) {
+//   if (req.secure) {
+//     return next();
+//   }
+//   res.redirect("https://" + req.headers.host + req.url);
+// });
 app.use(express.static('public'))
 app.use(morgan('dev'))
 app.use(express.json())
