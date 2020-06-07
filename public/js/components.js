@@ -54,14 +54,9 @@ Vue.component("contact-from", {
         })
         .then(function (response) {
           // response.status === 200 && (this.success = true)
-          this.success = true
+          vm.success = true
           console.log(response, response.status)
          
-        })
-        .then((response) => {
-          if (response.status === 200) {
-            this.success = true
-          }
         })
         .catch(function (error) {
           console.log(error)
