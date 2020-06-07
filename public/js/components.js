@@ -50,9 +50,9 @@ Vue.component("contact-from", {
       )
       axios
         .post("https://connoringoldcontactform.herokuapp.com/contact", {
-          email: "test@gmail.com",
-          name: "testPerson",
-          message: "hello there",
+          email: this.email,
+          name: this.name,
+          message: this.message,
         })
         .then(function (response) {
           console.log(response)
