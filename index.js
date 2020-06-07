@@ -48,6 +48,11 @@ app.post('/contact', (req, res) => {
 
 })
 
+// redirect all http to https
+app.get("*", function (request, response) {
+  response.redirect("https://" + request.headers.host + request.url);
+});
+
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/public/projects.html')))
 app.get('/projects', (req, res) => res.sendFile(path.join(__dirname +'/public/projects.html')))
 app.get('/contact', (req, res) => res.sendFile(path.join(__dirname + '/public/contact.html')))
