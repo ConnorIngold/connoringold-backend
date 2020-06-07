@@ -3,9 +3,13 @@ const app = express()
 const morgan = require('morgan');
 const nodemailer = require('nodemailer');
 const port = process.env.PORT || 3000
+const path = require('path');
+
+const whitelist = ['https://connoringold.com/', 'https://connoringold.com/contact.html']
 const cors = require("cors")
 
 // Middleware
+app.use(express.static('public'))
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(
@@ -13,7 +17,6 @@ app.use(
     origin: "https://connoringold.com/",
   })
 )
-app.get('/', (req, res) => res.send('Hello World!'))
 
 app.post('/contact', (req, res) => {
   // Step one login
@@ -44,5 +47,9 @@ app.post('/contact', (req, res) => {
   })
 
 })
+
+app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/public/projects.html')))
+app.get('/projects', (req, res) => res.sendFile(path.join(__dirname +'/public/projects.html')))
+app.get('/contact', (req, res) => res.sendFile(path.join(__dirname + '/public/contact.html')))
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))

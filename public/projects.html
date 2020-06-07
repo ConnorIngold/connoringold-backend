@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Connor Ingold | Web Developer Portfolio">
+  <meta name="theme-color" content="#BB86FC" />
+
+  <!-- Apple Touch Icon (at least 200x200px) -->
+  <link rel="apple-touch-icon" href="img/favicon.png">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <!-- To run web application in full-screen -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
+  <!-- Status Bar Style (see Supported Meta Tags below for available values) -->
+  <!-- Has no effect unless you have the previous meta tag -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <title>Connor Ingold</title>
+  <!-- STYLESHEETS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+  <link rel="manifest" href="./manifest.json">
+  <style>
+    #sidebar > div > nav > a:nth-child(3) {
+      border-bottom: 1px solid;
+    }
+  </style>
+  <!-- SCRIPTS -->
+
+</head>
+<body id="app">
+  <nav id="mobile">
+    <ul class="hamburger-navigation is-opened">
+  
+      <li><a href="/">Home</a></li>
+  
+      <li><a href="/projects.html">Projects</a></li>
+  
+      <li><a href="/contact.html">Contact</a></li>
+  
+    </ul>
+  </nav>
+  <div id="sidebar" class="sidebar">
+    <sidebar></sidebar>
+  </div>
+  <div id="projects">
+    <div class="container">
+      <h3>My work</h3>
+      <div class="banner-img">
+        <img src="img/bolton.png" alt="">
+      </div>
+
+      <div id="banner-overlay">
+        <h4>Featured Project: <a href="https://www.bolton.ac.uk/">Bolton University</a></h4>
+        <h2><em>"James quote here: Connor is great"</em></h2>
+        <p><a href="https://jpstudios.co.uk/">JPstudios</a> - Mar, 15, 2019</p>
+      </div>
+      <div class="row">
+        <div class="card">
+          <img style="object-position: top;" src="img/giggabox.png" alt="">
+          <div class="card-overlay">
+            <h4>
+              Project: <a href="https://www.giggabox.co.uk/"> Giggabox</a>
+              </p>
+              <p><em>"Specialists in delivering spectacular events and crafting beautiful films for business."</em>
+              </p>
+              <p>Mar, 15, 2019</p>
+          </div>
+        </div>
+        <div class="card">
+          <img style="object-position: top;" src="img/dawsonGroup.png" alt="">
+          <div class="card-overlay">
+            <h4>
+              Project: <a href="https://www.dawsongroupinternational.com/">Dawson Group ITL</a>
+              </p>
+              <p><em>"Dawsongroup international provide an extensive range of innovative and cost effective inflatable cold store solutions."</em>
+              </p>
+              <p>Mar, 15, 2019</p>
+          </div>
+        </div>
+        <div class="card">
+          <img style="object-position: top;" src="img/old-portfolio.png" alt="">
+          <div class="card-overlay">
+            <h4>
+              Project: <a href="https://connoringold.github.io/shuttle-Code-Portfolio/"> Old Portfolio</a>
+              </p>
+              <p><em>"My old portfolio I used whilst I was self employed. My skills have massivly improved since then hence this new portfolio."</em>
+              </p>
+              <p>Mar, 15, 2019</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/vue.min.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/anime.min.js"></script>
+  <script src="js/waypoints.min.js"></script>
+  <script src="js/simplebar.min.js"></script>
+  <script>
+      new SimpleBar(document.querySelector("#projects"), { overflowX: false })
+  </script>
+</body>
+</html>
