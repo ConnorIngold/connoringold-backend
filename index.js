@@ -13,7 +13,7 @@ const limiter = new RateLimiter(5, "hour")
 const whitelist = ['https://connoringold.com/', 'https://connoringold.com/contact.html', "https://connoringoldcontactform.herokuapp.com/contact", "http://localhost:3000", "https://connoringoldcontactform.herokuapp.com/contact"]
 const cors = require("cors")
 
-Middleware
+// Middleware
 app.enable('trust proxy');
 app.use(function (req, res, next) {
   if (req.secure) {
