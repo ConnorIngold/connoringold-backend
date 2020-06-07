@@ -428,6 +428,15 @@ article{
       font-size: 18px;
     }
   }
+  .message-failed{
+    text-align: center;
+    background: #e45252;
+    border-radius: 0.4rem;
+    p{
+      color: #fff;
+      font-size: 18px;
+    }
+  }
 }
 
 // sidebar library styles

@@ -6,6 +6,10 @@ const nodemailer = require('nodemailer');
 const port = process.env.PORT || 3000
 const path = require('path');
 
+// Antispam protection
+const RateLimiter = require("limiter").RateLimiter
+const limiter = new RateLimiter(5, "hour")
+
 const whitelist = ['https://connoringold.com/', 'https://connoringold.com/contact.html', "https://connoringoldcontactform.herokuapp.com/contact", "http://localhost:3000", "https://connoringoldcontactform.herokuapp.com/contact"]
 const cors = require("cors")
 
@@ -44,18 +48,27 @@ app.post('/contact', (req, res) => {
     subject: `Email from ${req.body.name}`,
     text: req.body.message
   }
-
-  // Step three send email
-  transporter.sendMail(mailOptions, (err, data) => {
-    if (err) {
-      console.log("Error Occurs: ", err)
-      res.json({"error ": err})
-    } else {
-      console.log("Email sent!!!")
-      res.json({ "email data: ": data })
+  limiter.removeTokens(1, (err, remainingRequests) => {
+    console.log("remainingRequests: ", remainingRequests);
+    
+    if (remainingRequests < 1) {
+      res.writeHead(429, { "Content-Type": "text/plain;charset=UTF-8" })
+      res.end("429 Too Many Requests - your IP is being rate limited")
+    } else {   
+      // Step three send email
+      transporter.sendMail(mailOptions, (err, data) => {
+        if (err) {
+          console.log("Error Occurs: ", err)
+          res.json({"error ": err})
+        } else {
+          console.log("Email sent!!!")
+          res.json({ "email data: ": data })
+        }
+      })
     }
   })
 
+  
 })
 
 

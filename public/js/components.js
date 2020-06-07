@@ -41,7 +41,8 @@ Vue.component("contact-from", {
       email: "",
       name: "",
       message: "",
-      success: false
+      success: false,
+      fail: false
     }
   },
   methods: {
@@ -58,7 +59,8 @@ Vue.component("contact-from", {
           console.log(response, response.status)
          
         })
-        .catch(function (error) {
+        .catch((error) => {
+          this.fail = true
           console.log(error)
         })
     },
@@ -93,6 +95,9 @@ Vue.component("contact-from", {
               value="submit">
               <div class="message-sent" v-if="success">
                 <p>Message sent succesfully</p>
+              </div>
+              <div class="message-failed" v-if="fail">
+                <p>There was problem sending your message 😭</p>
               </div>
             </form>
           </div>

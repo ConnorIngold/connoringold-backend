@@ -408,6 +408,15 @@ article {
   color: #fff;
   font-size: 18px;
 }
+#contactForm .message-failed {
+  text-align: center;
+  background: #e45252;
+  border-radius: 0.4rem;
+}
+#contactForm .message-failed p {
+  color: #fff;
+  font-size: 18px;
+}
 
 .simplebar-wrapper {
   max-height: 100% !important;
