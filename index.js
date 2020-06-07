@@ -10,7 +10,7 @@ app.use(morgan('dev'))
 app.use(express.json())
 app.use(
   cors({
-    origin: "https://connoringold.com",
+    origin: "http://127.0.0.1:5500/projects.html",
   })
 )
 app.get('/', (req, res) => res.send('Hello World!'))
