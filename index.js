@@ -11,15 +11,12 @@ const cors = require("cors")
 
 // Middleware
 app.use(function (req, res, next) {
-  if (req.secure) {
-    // request was via https, so do no special handling
-    next();
+  if (req.headers["x-forwarded-proto"] == "http") {
+    res.redirect("https://connoringoldcontactform.herokuapp.com/" + req.url, next);
   } else {
-    // request was via http, so redirect to https
-    res.redirect('https://' + req.headers.host + req.url);
+    return next();
   }
 });
-
 app.use(express.static('public'))
 app.use(morgan('dev'))
 app.use(express.json())
