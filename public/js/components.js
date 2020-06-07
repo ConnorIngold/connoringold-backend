@@ -52,9 +52,9 @@ Vue.component("contact-from", {
           name: this.name,
           message: this.message,
         })
-        .then(function (response) {
+        .then((response) => {
           // response.status === 200 && (this.success = true)
-          vm.success = true
+          this.success = true
           console.log(response, response.status)
          
         })
