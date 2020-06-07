@@ -49,8 +49,10 @@ app.post('/contact', (req, res) => {
   transporter.sendMail(mailOptions, (err, data) => {
     if (err) {
       console.log("Error Occurs: ", err)
+      res.json({"error ": err})
     } else {
       console.log("Email sent!!!")
+      res.json({ "email data: ": data })
     }
   })
 
