@@ -1,4 +1,5 @@
 const express = require('express')
+
 const app = express()
 const morgan = require('morgan');
 const nodemailer = require('nodemailer');
@@ -9,6 +10,16 @@ const whitelist = ['https://connoringold.com/', 'https://connoringold.com/contac
 const cors = require("cors")
 
 // Middleware
+app.use(function (req, res, next) {
+  if (req.secure) {
+    // request was via https, so do no special handling
+    next();
+  } else {
+    // request was via http, so redirect to https
+    res.redirect('https://' + req.headers.host + req.url);
+  }
+});
+
 app.use(express.static('public'))
 app.use(morgan('dev'))
 app.use(express.json())
@@ -17,7 +28,6 @@ app.use(
     origin: "https://connoringold.com/",
   })
 )
-app.enable("trust proxy");
 
 app.post('/contact', (req, res) => {
   // Step one login
@@ -48,7 +58,6 @@ app.post('/contact', (req, res) => {
   })
 
 })
-
 
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/public/projects.html')))
