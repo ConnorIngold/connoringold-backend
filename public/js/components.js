@@ -60,7 +60,7 @@ Vue.component("contact-from", {
           console.log(response, response.status)
          
         })
-        .then(() => {
+        .then((response) => {
           if (response.status === 200) {
             this.success = true
           }
