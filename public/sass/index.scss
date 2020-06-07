@@ -419,6 +419,15 @@ article{
       }
     }
   }
+  .message-sent{
+    text-align: center;
+    background: #52e452;
+    border-radius: 0.4rem;
+    p{
+      color: #fff;
+      font-size: 18px;
+    }
+  }
 }
 
 // sidebar library styles

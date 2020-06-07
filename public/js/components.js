@@ -41,6 +41,7 @@ Vue.component("contact-from", {
       email: "",
       name: "",
       message: "",
+      success: false
     }
   },
   methods: {
@@ -56,6 +57,7 @@ Vue.component("contact-from", {
         })
         .then(function (response) {
           console.log(response)
+          response.status === 200 && (this.success = true)
         })
         .catch(function (error) {
           console.log(error)
@@ -90,6 +92,9 @@ Vue.component("contact-from", {
               <input 
               type="submit" 
               value="submit">
+              <div class="message-sent" v-if="success">
+                <p>Message sent succesfully</p>
+              </div>
             </form>
           </div>
         </div>

@@ -399,6 +399,15 @@ article {
   font-weight: 600;
   font-size: 32px;
 }
+#contactForm .message-sent {
+  text-align: center;
+  background: #52e452;
+  border-radius: 0.4rem;
+}
+#contactForm .message-sent p {
+  color: #fff;
+  font-size: 18px;
+}
 
 .simplebar-wrapper {
   max-height: 100% !important;
