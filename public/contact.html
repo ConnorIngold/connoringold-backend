@@ -64,14 +64,14 @@
   let form = document.querySelectorAll("form")
 
   for (const input of inputs) {
-    input.addEventListener("focusout",  function (event) {
+    input.addEventListener("focusout", event => {
       let nameOfInput = this.name
       let nameOfLabel = document.querySelector("label[for=" + this.name + "]")
       if(this.value === ""){
         nameOfLabel.classList.remove("active")
       }
     });
-    input.addEventListener("focus", function (event) {
+    input.addEventListener("focus", event => {
       let nameOfInput = this.name
       let nameOfLabel = document.querySelector("label[for=" + this.name + "]")
       console.log(nameOfInput, nameOfLabel)

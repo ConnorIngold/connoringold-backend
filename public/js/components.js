@@ -113,8 +113,38 @@ new Vue({ el: "#contactForm" })
 // menu functionality
 let hamburgerMenu = document.getElementById("nav-icon3")
 let dropDownMenu = document.getElementById("mobile")
+let navLinks = document.querySelectorAll("nav > a")
 
-hamburgerMenu.addEventListener("click", () => {
+// js media query
+var mq = window.matchMedia("(min-width: 780px)");
+
+hamburgerMenu.onclick = () => {
+
   hamburgerMenu.classList.toggle("open")
   dropDownMenu.classList.toggle("is-opened")
-})
+
+  if (mq.matches) {
+    const toggleAnime = anime({
+      targets: ".sidebar",
+      // [start, finish]
+      width: "200px",
+      easing: "easeInOutQuad"
+    })
+
+    const treVerse = () => {
+      anime({
+        targets: ".sidebar",
+        // [start, finish]
+        width: "100px",
+        easing: "easeInOutQuad"
+      })
+    }
+
+    for (var i = 0; i < navLinks.length; i++) {
+      navLinks[i].classList.toggle("active")
+    }
+    toggleAnime.play();
+    toggleAnime.reverse();
+    document.querySelector("nav > a").classList.contains('active') ? toggleAnime.reverse() : treVerse();
+  }
+}

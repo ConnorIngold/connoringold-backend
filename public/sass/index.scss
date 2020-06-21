@@ -96,10 +96,6 @@ nav {
     font-size: 14px;
     transition: all 0.3s ease;
     transform-origin: center;
-    &:hover {
-      cursor: pointer;
-      transform: scale(1.2);
-    }
     &:nth-child(1){
       margin-top: -15px;
     }
@@ -109,6 +105,10 @@ nav {
     &:hover{
       color: #BB86FC;
     }
+  }
+  a.active{
+    cursor: pointer;
+    transform: scale(1.2);
   }
 }
 #mobile{
@@ -456,9 +456,17 @@ article{
   }
   article{
     width: 100%;
+    padding-top: 30px;
+    background: inherit;
   }
   nav{
     display: none;
+  }
+  .indicator{
+    top: 0;
+  }
+  article, .simplebar-offset, .simplebar-content-wrapper, .simplebar-content{
+    height: 100%;
   }
   .fix.container {
     width: 80%;
@@ -541,8 +549,11 @@ article{
     transition-timing-function: ease-out;
     margin: 10px 0;
   }
-  .purple-bg {
-    display: none;
+  .purple-bg{
+    width: 100%;
+  }
+  .purple-bg .image{
+    height: 30vh;
   }
   .sidebar {
     height: 100px;

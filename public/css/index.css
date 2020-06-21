@@ -87,10 +87,6 @@ nav a {
   transition: all 0.3s ease;
   transform-origin: center;
 }
-nav a:hover {
-  cursor: pointer;
-  transform: scale(1.2);
-}
 nav a:nth-child(1) {
   margin-top: -15px;
 }
@@ -99,6 +95,10 @@ nav a:nth-child(5) {
 }
 nav a:hover {
   color: #BB86FC;
+}
+nav a.active {
+  cursor: pointer;
+  transform: scale(1.2);
 }
 
 #mobile {
@@ -432,10 +432,20 @@ article {
 
   article {
     width: 100%;
+    padding-top: 30px;
+    background: inherit;
   }
 
   nav {
     display: none;
+  }
+
+  .indicator {
+    top: 0;
+  }
+
+  article, .simplebar-offset, .simplebar-content-wrapper, .simplebar-content {
+    height: 100%;
   }
 
   .fix.container {
@@ -524,7 +534,11 @@ article {
   }
 
   .purple-bg {
-    display: none;
+    width: 100%;
+  }
+
+  .purple-bg .image {
+    height: 30vh;
   }
 
   .sidebar {

@@ -1,4 +1,6 @@
+if (mq.matches) {
 new SimpleBar(document.querySelector("article"), { overflowX: false })
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   // Creating waypoint

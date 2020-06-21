@@ -78,3 +78,5 @@ app.get('/projects', (req, res) => res.sendFile(path.join(__dirname +'/public/pr
 app.get('/contact', (req, res) => res.sendFile(path.join(__dirname + '/public/contact.html')))
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+
+
