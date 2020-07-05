@@ -8,16 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
     targets: ".sidebar",
     // [start, finish]
     translateX: [-100, 0],
-    delay: 300,
+    delay: 100,
   })
 
   anime({
     targets: ".purple-bg",
     // [start, finish]
     translateY: [-1000, 0],
-    delay: 300,
+    delay: 100,
     easing: "easeInOutQuad",
-    duration: 1000,
+    duration: 500,
   }).finished.then(function () {
     anime({
       targets: ".image",
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       translateY: [-1000, 0],
       delay: 350,
       easing: "easeInOutQuad",
-      duration: 1000,
+      duration: 500,
     })
   })
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     targets: "article",
     // [start, finish]
     translateY: [1000, 0],
-    delay: 300,
+    delay: 100,
     easing: "easeInOutQuad",
   }).finished.then(function () {
     anime({
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       translateY: [1000, 0],
       delay: 350,
       easing: "easeInOutQuad",
-      duration: 1000,
+      duration: 400,
     })
   })
 })

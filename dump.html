@@ -1,0 +1,53 @@
+{% for block in section.blocks %}
+  <div class="row">
+    <div class="col-md-4">
+      <div class="custom-wrap">
+        <div class="text-center">
+          <p>{{ block.settings.blocktext1 }}</p>
+        </div>
+        <div class="orange-bg">
+          <p>{{ block.settings.blocktext2 }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+{% schema %}
+  {
+    
+  "name": "Testimonal block",
+  "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "My custom section"
+      }
+   ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Custom Blocks",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "blocktext1",
+          "label": "Text block 1"
+        },
+        {
+          "type": "richtext",
+          "id": "blocktext2",
+          "label": "Text block 2"
+        }
+      ]
+    }
+  ],
+  "presets": [
+      {
+          "name": "call to action banner",
+          "category": "text"
+      }
+  ]
+}
+{% endschema %}

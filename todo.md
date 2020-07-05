@@ -4,8 +4,11 @@
 
 [] mobile desktop
 
+[x] fix contact page on mobile
+
 [] add animation to projects page
-[] add animation to the sidebar when clicking on the hamburger menu
+[x] add animation to the sidebar when clicking on the hamburger menu
 
 
-[] set the domain to connoringold.com
+[x] set the domain to connoringold.com
+

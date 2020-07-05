@@ -568,6 +568,17 @@ article{
     top: 0;
     z-index: 99;
   }
+
+  #contactForm{
+    width: 80%;
+    margin: auto;
+    .custom-container{
+      margin-top: 10vh;
+      position: unset;
+      width: auto;
+      padding: 0px 15px;
+    }
+  }
 }
 
 @media only screen and (min-width: 780px) {
@@ -684,3 +695,4 @@ article{
   width: 0%;
   left: 50%;
 }
+

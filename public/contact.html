@@ -65,15 +65,15 @@
 
   for (const input of inputs) {
     input.addEventListener("focusout", event => {
-      let nameOfInput = this.name
-      let nameOfLabel = document.querySelector("label[for=" + this.name + "]")
-      if(this.value === ""){
+      let nameOfInput = event.target.name
+      let nameOfLabel = document.querySelector("label[for=" + nameOfInput + "]")
+      if(event.target.value === ""){
         nameOfLabel.classList.remove("active")
       }
     });
     input.addEventListener("focus", event => {
-      let nameOfInput = this.name
-      let nameOfLabel = document.querySelector("label[for=" + this.name + "]")
+      let nameOfInput = event.target.name
+      let nameOfLabel = document.querySelector("label[for=" + nameOfInput + "]")
       console.log(nameOfInput, nameOfLabel)
       nameOfLabel.classList.add("active")
     })
