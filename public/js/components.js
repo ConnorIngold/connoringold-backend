@@ -28,7 +28,7 @@ Vue.component("sidebar", {
       <a href="/contact">CONTACT</a>
     </nav>
 
-    <div class="indicator"></div>
+    <a href="/"><div class="indicator"></div></a>
   </div>`,
 })
 
