@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Heebo:300|Playfair+Display:400,700&display=swap");
 * {
   box-sizing: border-box;
+  cursor: none !important;
 }
 
 body {
@@ -11,10 +12,12 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: row;
+  cursor: none !important;
 }
 
 a {
   transition: ease 0.3s color;
+  cursor: none !important;
 }
 
 h1 {
@@ -565,6 +568,9 @@ article {
     width: auto;
     padding: 0px 15px;
   }
+  #contactForm .custom-container .header {
+    margin: 0px -15px;
+  }
 }
 @media only screen and (min-width: 780px) {
   .sidebar > div {
@@ -674,6 +680,11 @@ article {
   top: 18px;
   width: 0%;
   left: 50%;
+}
+
+body #magicMouseCursor {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border: 2px solid #fff !important;
 }
 
 /*# sourceMappingURL=index.css.map */

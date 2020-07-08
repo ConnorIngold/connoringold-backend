@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+  <link rel="stylesheet" href="img/dist/magic-mouse.css" />
   <link rel="manifest" href="./manifest.json">
   <style>
     #sidebar>div>nav>a:nth-child(5) {
@@ -58,6 +59,18 @@
   <script src="js/simplebar.min.js"></script>
   <script src="https://www.google.com/recaptcha/api.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+  <script src="img/dist/magic_mouse.js"></script>
+  <script type="text/javascript">
+      options = {
+        "cursorOuter": "circle-basic",
+        "hoverEffect": "circle-move",
+        "hoverItemMove": false,
+        "defaultCursor": false,
+        "outerWidth": 30,
+        "outerHeight": 30
+      };
+      magicMouse(options);
+  </script>
   <script>
 
   let inputs = document.querySelectorAll("input[type=text], input[type=email], input[type=textarea]")
